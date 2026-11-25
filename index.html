@@ -47,6 +47,11 @@ button:disabled{opacity:.5;cursor:default}
 .info dt{font-weight:700;color:var(--mut)}
 .info dd{margin:0}
 .note{font-size:.82rem;color:var(--mut)}
+.nf-sim{background:var(--card);border:1px dashed var(--line);border-radius:8px;padding:7px 10px;margin:0 0 8px;font-size:.92rem}
+.nf-leg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.8rem;margin:6px 0;padding:0}
+.nf-leg span{display:inline-flex;align-items:center;gap:5px}
+.nf-leg i{display:inline-block;width:12px;height:12px;border-radius:50%;flex:none}
+.nf-leg i.dm{border-radius:2px;transform:rotate(45deg);width:10px;height:10px}
 .calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;margin-top:10px}
 .cbox{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
 .cbox label{display:block;font-size:.85rem;color:var(--mut);margin-top:7px}
@@ -422,9 +427,9 @@ footer{text-align:center;color:var(--mut);font-size:.85rem;padding:0 14px 30px}
 <text x="600" y="895" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#222" font-weight="normal" text-anchor="start" >cuando falta volumen.</text>
 </svg>
 </div><div class="lab" id="lab-nefrona"><span class="tag">INTERACTIVO</span><h3>Nefrona para tocar y ver fluir</h3>
-<p class="note">Toca un segmento (en el dibujo o en los botones). Los puntos son el filtrado: cada punto ≈ 3 L/día; mira cómo casi todos se «reabsorben» y solo llega 1 punto a la orina.</p>
+<p class="note">Toca un segmento (en el dibujo o en los botones) o una sustancia en «¿Qué le pasa a…?». Los puntos azules son el filtrado (cada punto ≈ 3 L/día): mira cómo casi todos se reabsorben (cruzan al capilar y se ponen verdes) y solo llega 1 punto a la orina. Los glóbulos rojos y las proteínas grandes no pasan el filtro: siguen en la sangre. Los puntos naranjas son lo que el túbulo secreta desde la sangre.</p>
 <div class="grid2"><div><div class="svgbox"><svg id="nf-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 660" role="img">
-<defs></defs>
+<defs><marker id="nf-arr" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9b2d52"/></marker></defs>
 <rect width="380" height="660" fill="#ffffff"/>
 <g transform="translate(8,12) scale(1)">
 <path d="M0,12 Q0,0 12,0 L348,0 Q360,0 360,12 L360,290 L0,290 Z" fill="#fdeeea" stroke="#e8c8c0" stroke-width="1"/>
@@ -434,6 +439,17 @@ footer{text-align:center;color:var(--mut);font-size:.85rem;padding:0 14px 30px}
 <text x="8" y="308" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#9a6a2c">MÉDULA externa</text>
 <text x="30" y="458" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#9a6a2c">MÉDULA interna</text>
 <line x1="30" y1="440" x2="345" y2="440" stroke="#d1b38a" stroke-width="1" stroke-dasharray="3 4"/>
+<path d="M150,38 C150,50 156,58 172,58 L294,58 L294,566 Q287,578 280,566 L280,332" fill="none" stroke="#9b2d52" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#nf-arr)" id="in-capA" data-seg="cap"/>
+<path d="M172,58 Q178,58 178,66 L178,292 C178,300 186,304 186,312 L186,520 Q192,534 198,520 L198,292" fill="none" stroke="#9b2d52" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#nf-arr)" id="in-capB" data-seg="cap"/>
+<text x="160" y="392" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="bold" fill="#9b2d52">Capilar peritubular →</text>
+<text x="276" y="338" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="8.5" fill="#9b2d52">vénula</text>
+<text x="4" y="150" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="bold" fill="#7b1fa2">✕ no pasan:</text>
+<text x="4" y="161" font-family="Arial, Helvetica, sans-serif" font-size="8.5" fill="#7b1fa2">GR y proteínas</text>
+<text x="132" y="274" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="bold" fill="#2e7d32">≈ 65 %</text>
+<text x="242" y="262" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="bold" fill="#2e7d32">≈ 25 %</text>
+<text x="232" y="50" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="bold" fill="#2e7d32">≈ 5 %</text>
+<text x="319" y="430" font-family="Arial, Helvetica, sans-serif" font-size="8.5" fill="#2e7d32">colector:</text>
+<text x="319" y="441" font-family="Arial, Helvetica, sans-serif" font-size="8.5" fill="#2e7d32">el resto</text>
 <path d="M14,58 C55,64 88,84 100,112" fill="none" stroke="#d84343" stroke-width="10" stroke-linecap="round" id="in-aff" data-seg="aff"/>
 <path d="M122,112 C140,92 150,70 150,38" fill="none" stroke="#a82424" stroke-width="6" stroke-linecap="round" id="in-eff" data-seg="eff"/>
 <circle cx="110" cy="150" r="45" fill="#fff3e0" stroke="#e0a96d" stroke-width="5" id="in-bow" data-seg="bow"/>
@@ -465,9 +481,11 @@ footer{text-align:center;color:var(--mut);font-size:.85rem;padding:0 14px 30px}
 </svg>
 </div>
 <div class="row"><button id="nf-pause" class="primary">⏸ Pausar</button><label class="note" style="display:flex;gap:6px;align-items:center">Velocidad <input id="nf-speed" type="range" min="0.3" max="3" step="0.1" value="1" style="width:110px;min-height:0"></label></div>
-<p class="note">Puntos en el túbulo ahora: <b id="nf-alive">60</b> de 60. Azul = filtrado; amarillo = orina.</p></div>
+<p class="note">Puntos de filtrado en el túbulo ahora: <b id="nf-alive">60</b> de 60.</p>
+<div class="nf-leg" aria-label="Leyenda"><span><i style="background:#1e88e5"></i>Filtrado</span><span><i style="background:#43a047"></i>Reabsorbido (regresa a la sangre)</span><span><i style="background:#c62828"></i>Glóbulos rojos (no pasan)</span><span><i class="dm" style="background:#8e24aa"></i>Proteínas grandes (no pasan)</span><span><i style="background:#e65100"></i>Secretado</span><span><i style="background:#f9a825"></i>Orina</span></div></div>
 <div><div class="row chips" id="nf-chips"></div>
-<div class="info" id="nf-info"><h4>Toca un segmento</h4><p>Toca el glomérulo, el TCP, el asa, el TCD o el colector (en el dibujo o en los botones) y verás qué hace, qué reabsorbe o secreta, qué hormona actúa y qué diurético lo bloquea.</p></div>
+<p class="note" style="margin:6px 0 0"><b>¿Qué le pasa a…?</b></p><div class="row chips" id="nf-subs"></div>
+<div class="info" id="nf-info"><h4>Toca un segmento</h4><p>Toca el glomérulo, el TCP, el asa, el TCD, el colector o el capilar (en el dibujo o en los botones) y verás qué hace, qué reabsorbe o secreta, qué hormona actúa y qué diurético lo bloquea. O elige una sustancia en «¿Qué le pasa a…?».</p></div>
 <div class="row"><button id="nf-clear">Quitar selección</button></div></div></div></div></section>
 <section id="f3" class="card"><header><span class="num">3</span><h2>Formación de la orina</h2></header><ul class="key"><li>Cuatro procesos: filtración (glomérulo), reabsorción (túbulo → sangre), secreción (sangre → túbulo) y excreción (orina).</li><li>TCP: ≈ 65 % del Na⁺ y agua; asa descendente: agua; ascendente gruesa: sal sin agua; TCD: Na⁺ y Ca²⁺ (PTH); colector: agua (ADH) y Na⁺/K⁺ (aldosterona).</li><li>TFG 125 mL/min → 180 L/día filtrados → solo 1–2 L de orina. El gradiente medular (300 → 1,200 mOsm) permite concentrarla.</li></ul><div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1115" preserveAspectRatio="xMidYMid meet" role="img">
 <defs><linearGradient id="a3-gm" gradientUnits="userSpaceOnUse" x1="0" y1="290" x2="0" y2="615"><stop offset="0" stop-color="#fbeedd"/><stop offset="1" stop-color="#e3a56c"/></linearGradient><linearGradient id="a3-os" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe8ff"/><stop offset="1" stop-color="#0d47a1"/></linearGradient><marker id="a3-m2e7d32" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/></marker><marker id="a3-me65100" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e65100"/></marker><marker id="a3-m8a6a00" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a00"/></marker><marker id="a3-m555" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
@@ -1705,62 +1723,68 @@ function seeded(seed){var s=seed;return function(){s=(s*1664525+1013904223)%4294
 
 /* ================= NEFRONA INTERACTIVA ================= */
 var SEG={
-glom:{n:"Glomérulo y cápsula de Bowman",c:"#d84343",ub:"Corteza",
+glom:{sim:"Es el colador de la cocina: la sangre llega a presión y el agua con cosas pequeñas se cuela a la olla (la cápsula de Bowman). Lo grande se queda en la sangre.",no:"Glóbulos rojos y proteínas grandes (albúmina): son muy grandes y la barrera tiene carga negativa que repele a las proteínas. Se quedan en la sangre y salen por la arteriola eferente.",n:"Glomérulo y cápsula de Bowman",c:"#d84343",ub:"Corteza",
  fn:"FILTRACIÓN: la presión de la sangre empuja agua y solutos pequeños hacia la cápsula de Bowman. TFG ≈ 125 mL/min (≈ 180 L/día).",
  re:"No reabsorbe nada: filtra agua, Na⁺, K⁺, glucosa, urea, creatinina y aminoácidos. NO pasan células ni proteínas grandes (albúmina).",
  ho:"Ang II constriñe la arteriola eferente y sostiene la TFG; el péptido natriurético dilata la aferente (↑ TFG).",
  di:"Ninguno actúa aquí directamente.",
  cl:"Si el glomérulo se daña: proteinuria (nefrótico) o hematuria (nefrítico). Una TFG baja sube la creatinina."},
-art:{n:"Arteriolas aferente y eferente",c:"#b02a2a",ub:"Corteza (polo vascular del glomérulo)",
+art:{sim:"Dos tubitos: por el ancho entra el caldo al colador y por el estrecho sale. Como el de salida es más angosto, se acumula presión, como al tapar la manguera con el dedo.",n:"Arteriolas aferente y eferente",c:"#b02a2a",ub:"Corteza (polo vascular del glomérulo)",
  fn:"La aferente trae la sangre (ancha) y la eferente la saca (estrecha): esa diferencia de calibre mantiene alta la presión dentro del glomérulo.",
  re:"—",
  ho:"Ang II constriñe la eferente; las prostaglandinas dilatan la aferente.",
  di:"Ninguno directo.",
  cl:"Los AINE bloquean prostaglandinas (constriñen la aferente) y los IECA/ARA II dilatan la eferente: ambos pueden bajar la TFG en un paciente deshidratado."},
-jga:{n:"Aparato yuxtaglomerular",c:"#14683a",ub:"Corteza (donde el TCD toca a la aferente)",
+jga:{sim:"Es el sensor de la cocina: prueba qué tan salado llega el líquido y, si falta caldo, avisa soltando renina.",n:"Aparato yuxtaglomerular",c:"#14683a",ub:"Corteza (donde el TCD toca a la aferente)",
  fn:"Mácula densa: mide Na⁺/Cl⁻ del líquido tubular. Células yuxtaglomerulares: sienten la presión de la aferente y guardan renina.",
  re:"—",
  ho:"LIBERA RENINA (activa el SRAA) cuando baja la presión, baja el Na⁺ o hay estímulo simpático.",
  di:"Ninguno directo (los IECA/ARA II modifican su retroalimentación).",
  cl:"Si hay ↓ volumen: ↑ renina → ↑ Ang II y aldosterona. Si hay mucho NaCl: la aferente se contrae (retroalimentación tubuloglomerular)."},
-tcp:{n:"Túbulo contorneado proximal (TCP)",c:"#f08c00",ub:"Corteza (y su porción recta en la médula externa)",
+tcp:{sim:"Es el primer tubo de reciclaje y el más trabajador: devuelve a la sangre casi todo lo útil (agua, sal, glucosa) y de paso bota algunos desechos.",n:"Túbulo contorneado proximal (TCP)",c:"#f08c00",ub:"Corteza (y su porción recta en la médula externa)",
  fn:"El gran recuperador: devuelve a la sangre casi todo lo útil.",
  re:"REABSORBE ≈ 65 % del Na⁺ y del agua, ≈ 100 % de glucosa y aminoácidos, la mayor parte del HCO₃⁻, K⁺, Cl⁻ y fosfato. SECRETA H⁺, amoníaco, ácidos y bases orgánicas y fármacos (p. ej. penicilinas).",
  ho:"Ang II ↑ reabsorción de Na⁺; la PTH ↓ la reabsorción de fosfato.",
  di:"Inhibidores de la anhidrasa carbónica (acetazolamida) y osmóticos (manitol).",
  cl:"Glucosuria cuando la glucosa en sangre pasa de ≈ 180 mg/dL (se satura el transporte). Si el TCP falla: síndrome de Fanconi."},
-desc:{n:"Asa de Henle descendente delgada",c:"#4a9ad6",ub:"Médula",
+desc:{sim:"Un tobogán por el que baja el líquido: la médula salada le va sacando agua, como una esponja.",n:"Asa de Henle descendente delgada",c:"#4a9ad6",ub:"Médula",
  fn:"Concentra el líquido: baja por la médula, que es cada vez más salada.",
  re:"Permeable al AGUA (acuaporina 1): el agua sale por ósmosis hacia el intersticio hiperosmolar. Poco soluto. El líquido llega a ≈ 1,200 mOsm en la punta del asa.",
  ho:"Ninguna principal.",
  di:"Los osmóticos (manitol) actúan en TCP y rama descendente.",
  cl:"Sin gradiente medular (p. ej. por diuréticos de asa) la orina no se concentra."},
-asc:{n:"Asa ascendente delgada",c:"#8cc4ec",ub:"Médula interna",
+asc:{sim:"El camino de regreso hacia arriba: ya no sale agua, pero sí algo de sal.",n:"Asa ascendente delgada",c:"#8cc4ec",ub:"Médula interna",
  fn:"Sube por la médula interna; el líquido empieza a diluirse.",
  re:"IMPERMEABLE al agua, pero deja salir Na⁺ y Cl⁻ de forma pasiva (el líquido tubular está muy concentrado).",
  ho:"Ninguna principal.",
  di:"Ninguno específico.",
  cl:"Junto con la rama gruesa, es la parte que «diluye» la orina."},
-tal:{n:"Asa de Henle ascendente gruesa",c:"#1b5e9e",ub:"Médula externa y corteza",
+tal:{sim:"Una bomba de sal: saca sal sin dejar salir agua. Así el líquido se diluye y la médula queda salada.",n:"Asa de Henle ascendente gruesa",c:"#1b5e9e",ub:"Médula externa y corteza",
  fn:"Bombea sal hacia afuera sin dejar salir agua: crea el gradiente de la médula y deja un líquido diluido (≈ 100 mOsm).",
  re:"REABSORBE ≈ 25 % del Na⁺ filtrado con el cotransportador Na⁺/K⁺/2Cl⁻ (NKCC2), además de Ca²⁺ y Mg²⁺. IMPERMEABLE al agua.",
  ho:"Ninguna principal (la mácula densa está en su extremo final).",
  di:"DIURÉTICOS DE ASA (furosemida, bumetanida): bloquean NKCC2. Son los más potentes y hacen perder K⁺, Ca²⁺ y Mg²⁺.",
  cl:"Con furosemida: vigilar hipokalemia, hipovolemia y ototoxicidad (IV rápida)."},
-tcd:{n:"Túbulo contorneado distal (TCD)",c:"#2e9e5b",ub:"Corteza",
+tcd:{sim:"Es el ajuste fino de la cocina: recupera un poquito más de sal y calcio según lo que el cuerpo necesite.",n:"Túbulo contorneado distal (TCD)",c:"#2e9e5b",ub:"Corteza",
  fn:"Afinado fino del sodio y del calcio.",
  re:"REABSORBE ≈ 5 % del Na⁺ y Cl⁻ (cotransportador NCC). REABSORBE Ca²⁺ bajo la acción de la PTH. Poco permeable al agua.",
  ho:"PTH (↑ Ca²⁺ reabsorbido); aldosterona en su porción final.",
  di:"TIAZIDAS (hidroclorotiazida, clortalidona): bloquean NCC; retienen Ca²⁺ y pierden K⁺.",
  cl:"Tiazidas: hipokalemia, hiponatremia, ↑ glucosa y ácido úrico."},
-cd:{n:"Túbulo colector",c:"#7e57c2",ub:"Corteza → médula → papila",
+cd:{sim:"La última estación: decide cuánta agua se queda en la orina, según las hormonas (ADH y aldosterona).",n:"Túbulo colector",c:"#7e57c2",ub:"Corteza → médula → papila",
  fn:"Ajusta el volumen y la concentración final de la orina.",
  re:"Con ADH inserta acuaporinas y reabsorbe AGUA (orina concentrada). Con aldosterona REABSORBE Na⁺ (canal ENaC) y SECRETA K⁺. Las células intercaladas SECRETAN H⁺ (acidifican la orina).",
  ho:"ADH, aldosterona; el péptido natriurético inhibe la reabsorción de Na⁺ y agua.",
  di:"AHORRADORES DE K⁺: espironolactona (bloquea la aldosterona) y amilorida/triamtereno (bloquean ENaC) → ↑ K⁺.",
- cl:"Sin ADH: diabetes insípida (mucha orina diluida). Ahorradores de K⁺: vigilar hiperkalemia y ECG."}
+ cl:"Sin ADH: diabetes insípida (mucha orina diluida). Ahorradores de K⁺: vigilar hiperkalemia y ECG."},
+cap:{sim:"Es la sangre que salió del colador y ahora rodea al tubo: recibe lo que el tubo recupera y le entrega lo que hay que botar.",n:"Capilar peritubular",c:"#9b2d52",ub:"Corteza y médula, pegado al túbulo (en la médula se llama vasa recta)",
+ fn:"Continúa a la arteriola eferente: la sangre ya colada corre junto al túbulo. Por aquí siguen su camino los glóbulos rojos y las proteínas que no pasaron el filtro.",
+ re:"Recibe lo reabsorbido (agua, Na⁺, glucosa, aminoácidos…) y entrega al túbulo lo que se secreta (H⁺, K⁺, fármacos). Termina en una vénula que lleva la sangre a la vena renal.",
+ ho:"—",
+ di:"—",
+ cl:"Por aquí regresa al cuerpo todo lo reabsorbido; lo que el túbulo no recupera se pierde en la orina."}
 };
-var MAP={glom:"glom",bow:"glom",aff:"art",eff:"art",jg:"jga",md:"jga",tcp:"tcp",tcp2:"tcp",desc:"desc",asc:"asc",tal:"tal",tcd:"tcd",cd:"cd",cd2:"cd"};
+var MAP={glom:"glom",bow:"glom",aff:"art",eff:"art",jg:"jga",md:"jga",tcp:"tcp",tcp2:"tcp",desc:"desc",asc:"asc",tal:"tal",tcd:"tcd",cd:"cd",cd2:"cd",cap:"cap"};
 var nf=$("nf-svg");
 if(nf){
   var els=nf.querySelectorAll("[data-seg]");
@@ -1772,58 +1796,208 @@ if(nf){
     e.setAttribute("aria-label",SEG[MAP[raw]].n);
     e.style.transition="opacity .25s";
     if(e.tagName==="path"){
-      var h=e.cloneNode(false);h.removeAttribute("id");h.setAttribute("stroke","#000");h.setAttribute("stroke-opacity","0");h.setAttribute("stroke-width","24");h.setAttribute("fill","none");h.setAttribute("stroke-linecap","round");h.style.cursor="pointer";h.setAttribute("data-seg",raw);h.removeAttribute("tabindex");h.removeAttribute("aria-label");h.removeAttribute("role");h.style.pointerEvents="stroke";layer.appendChild(h);
+      var h=e.cloneNode(false);h.removeAttribute("id");h.setAttribute("stroke","#000");h.setAttribute("stroke-opacity","0");h.setAttribute("stroke-width",raw==="cap"?"10":"24");h.setAttribute("fill","none");h.setAttribute("stroke-linecap","round");h.style.cursor="pointer";h.setAttribute("data-seg",raw);h.removeAttribute("tabindex");h.removeAttribute("aria-label");h.removeAttribute("role");h.style.pointerEvents="stroke";layer.appendChild(h);
     }
   }
   nf.appendChild(layer);
   var chips=$("nf-chips");
-  var order=["glom","art","jga","tcp","desc","asc","tal","tcd","cd"];
+  var order=["glom","art","jga","tcp","desc","asc","tal","tcd","cd","cap"];
   order.forEach(function(k){var b=document.createElement("button");b.textContent=SEG[k].n.replace("Asa de Henle ","Asa ").replace("Túbulo contorneado ","T. ");b.setAttribute("data-k",k);chips.appendChild(b);});
-  function select(k){
-    var d=SEG[k];
+  var subsBox=$("nf-subs");
+  var SUB={
+   agua:{n:"Agua",c:"#1e88e5",hl:["glom","tcp","desc","cd","cap"],
+    sim:"El agua es la parte líquida del caldo: casi toda se cuela al filtro y casi toda se regresa a la sangre.",
+    fil:"Sí, se filtra libre (unos 180 L al día).",
+    reab:"≈ 99 %: TCP ≈ 65 %, asa descendente (sale por ósmosis) y colector (con ADH, según lo que el cuerpo necesite).",
+    sec:"No.",
+    ori:"≈ 1–2 L al día (de unos 180 L filtrados).",
+    cl:"Sin ADH el colector no reabsorbe agua: mucha orina diluida (diabetes insípida)."},
+   glucosa:{n:"Glucosa",c:"#f08c00",hl:["glom","tcp","cap"],
+    sim:"La glucosa es la energía del caldo: el tubo la recoge toda para que no se pierda.",
+    fil:"Sí, pasa el colador.",
+    reab:"≈ 100 % en el TCP, con transportadores SGLT. Si hay demasiada, los transportadores se saturan.",
+    sec:"No.",
+    ori:"Normalmente nada. Aparece en la orina si la glucemia pasa de ≈ 180 mg/dL.",
+    cl:"Glucosuria: avisa que la glucosa en sangre está alta (p. ej. diabetes mal controlada)."},
+   na:{n:"Na⁺ (sodio)",c:"#1b5e9e",hl:["glom","tcp","tal","tcd","cd","cap"],
+    sim:"La sal se recupera por tramos, como pagar en varias cajas: la mayor parte se queda en la primera.",
+    fil:"Sí, se filtra libre.",
+    reab:"Más de 99 %: TCP ≈ 65 %, asa ascendente gruesa ≈ 25 %, TCD ≈ 5 % y el resto en el colector (con aldosterona).",
+    sec:"No.",
+    ori:"Muy poco: casi todo regresa a la sangre.",
+    cl:"Los diuréticos bloquean estos tramos: de asa (furosemida), tiazidas (TCD) y ahorradores de K⁺ (colector)."},
+   urea:{n:"Urea",c:"#6d4c41",hl:["glom","tcp","cd","cap"],
+    sim:"Es un desecho, pero el riñón se queda con un poco para mantener salada la médula y poder concentrar la orina.",
+    fil:"Sí, se filtra.",
+    reab:"≈ 50 % se reabsorbe (ayuda al gradiente de la médula).",
+    sec:"No.",
+    ori:"El resto sale en la orina.",
+    cl:"Si el riñón falla, la urea se acumula en la sangre."},
+   crea:{n:"Creatinina",c:"#00897b",hl:["glom","cap"],
+    sim:"Es un desecho del músculo: el riñón lo saca casi sin recuperar nada.",
+    fil:"Sí, se filtra.",
+    reab:"Casi nada.",
+    sec:"Un poco.",
+    ori:"Casi toda la que se filtra sale en la orina.",
+    cl:"Por eso sirve para estimar la TFG: si la creatinina sube en la sangre, el filtro está colando menos."},
+   prot:{n:"Proteínas",c:"#8e24aa",hl:["glom","tcp","art","cap"],
+    sim:"Las proteínas grandes (como la albúmina) son el caldo espeso que no debe colarse: el filtro las frena por su tamaño y por su carga negativa.",
+    fil:"Las grandes (albúmina) casi no pasan. Pasan pocas pequeñas.",
+    reab:"Las pocas pequeñas que se filtran se recuperan en el TCP (endocitosis).",
+    sec:"No.",
+    ori:"Normalmente casi nada.",
+    cl:"Proteinuria = daño de la barrera de filtración (p. ej. síndrome nefrótico)."},
+   gr:{n:"Glóbulos rojos",c:"#c62828",hl:["art","glom","cap"],
+    sim:"Los glóbulos rojos son demasiado grandes para el colador: se quedan en la sangre y salen por la arteriola eferente.",
+    fil:"Nunca pasan.",
+    reab:"No aplica: no entran al túbulo.",
+    sec:"No.",
+    ori:"Ninguno en condiciones normales.",
+    cl:"Hematuria = daño glomerular o de las vías urinarias."},
+   kh:{n:"K⁺ / H⁺ / fármacos",c:"#e65100",hl:["tcp","cd","cap"],
+    sim:"Son pendientes que quedaron en la sangre: el tubo los saca y los suma a la orina.",
+    fil:"Parte pasa con el filtrado, pero lo importante es lo que el túbulo les añade desde la sangre.",
+    reab:"Parte del K⁺ se reabsorbe en el TCP.",
+    sec:"Sí, de la sangre al túbulo: H⁺ y fármacos en el TCP; K⁺ y H⁺ en el colector (con aldosterona).",
+    ori:"Lo secretado se va en la orina: así el cuerpo elimina el exceso de ácido, de K⁺ y de fármacos.",
+    cl:"Los ahorradores de K⁺ bloquean el colector: el K⁺ puede subir en la sangre."}
+  };
+  var SUBORDER=["agua","glucosa","na","urea","crea","prot","gr","kh"];
+  SUBORDER.forEach(function(k){var b=document.createElement("button");b.textContent=SUB[k].n;b.setAttribute("data-s",k);subsBox.appendChild(b);});
+  function hl(keys){
     nf.querySelectorAll("[data-seg]").forEach(function(x){
       if(x.parentNode===layer)return;
-      x.style.opacity=(MAP[x.getAttribute("data-seg")]===k)?"1":"0.25";
+      x.style.opacity=(!keys||keys.indexOf(MAP[x.getAttribute("data-seg")])>=0)?"1":"0.25";
     });
+  }
+  function clearSel(){
+    chips.querySelectorAll("button").forEach(function(b){b.classList.remove("sel");});
+    subsBox.querySelectorAll("button").forEach(function(b){b.classList.remove("sel");});
+  }
+  function select(k){
+    var d=SEG[k];
+    hl([k]);clearSel();
     chips.querySelectorAll("button").forEach(function(b){b.classList.toggle("sel",b.getAttribute("data-k")===k);});
     var box=$("nf-info");box.style.borderLeftColor=d.c;
-    box.innerHTML="<h4 style='color:"+d.c+"'>"+d.n+"</h4><dl><dt>Dónde</dt><dd>"+d.ub+"</dd><dt>Qué hace</dt><dd>"+d.fn+"</dd><dt>Reabsorbe / secreta</dt><dd>"+d.re+"</dd><dt>Hormonas</dt><dd>"+d.ho+"</dd><dt>Diurético</dt><dd>"+d.di+"</dd><dt>En la clínica</dt><dd>"+d.cl+"</dd></dl>";
+    box.innerHTML="<h4 style='color:"+d.c+"'>"+d.n+"</h4><div class='nf-sim'><b>En palabras simples:</b> "+d.sim+"</div><dl><dt>Dónde</dt><dd>"+d.ub+"</dd><dt>Qué hace</dt><dd>"+d.fn+"</dd>"+(d.no?"<dt>Lo que NO pasa</dt><dd>"+d.no+"</dd>":"")+"<dt>Reabsorbe / secreta</dt><dd>"+d.re+"</dd><dt>Hormonas</dt><dd>"+d.ho+"</dd><dt>Diurético</dt><dd>"+d.di+"</dd><dt>En la clínica</dt><dd>"+d.cl+"</dd></dl>";
+  }
+  function selectSub(k){
+    var d=SUB[k];
+    hl(d.hl);clearSel();
+    subsBox.querySelectorAll("button").forEach(function(b){b.classList.toggle("sel",b.getAttribute("data-s")===k);});
+    var box=$("nf-info");box.style.borderLeftColor=d.c;
+    box.innerHTML="<h4 style='color:"+d.c+"'>¿Qué le pasa a: "+d.n+"?</h4><div class='nf-sim'><b>En palabras simples:</b> "+d.sim+"</div><dl><dt>¿Se filtra?</dt><dd>"+d.fil+"</dd><dt>¿Se reabsorbe?</dt><dd>"+d.reab+"</dd><dt>¿Se secreta?</dt><dd>"+d.sec+"</dd><dt>¿Cuánto llega a la orina?</dt><dd>"+d.ori+"</dd><dt>En la clínica</dt><dd>"+d.cl+"</dd></dl><p class='note' style='margin:8px 0 0'>Se resalta en el dibujo el tramo por donde pasa.</p>";
   }
   nf.addEventListener("click",function(ev){var t=ev.target.closest("[data-seg]");if(t)select(MAP[t.getAttribute("data-seg")]);});
   nf.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "){var t=ev.target.closest("[data-seg]");if(t){ev.preventDefault();select(MAP[t.getAttribute("data-seg")]);}}});
   chips.addEventListener("click",function(ev){var b=ev.target.closest("button");if(b)select(b.getAttribute("data-k"));});
+  subsBox.addEventListener("click",function(ev){var b=ev.target.closest("button");if(b)selectSub(b.getAttribute("data-s"));});
   $("nf-clear").addEventListener("click",function(){
-    nf.querySelectorAll("[data-seg]").forEach(function(x){x.style.opacity="1";});
-    chips.querySelectorAll("button").forEach(function(b){b.classList.remove("sel");});
-    var box=$("nf-info");box.style.borderLeftColor="";box.innerHTML="<h4>Toca un segmento</h4><p>Toca el glomérulo, el TCP, el asa, el TCD o el colector (en el dibujo o en los botones) y verás qué hace, qué reabsorbe o secreta, qué hormona actúa y qué diurético lo bloquea.</p>";
+    hl(null);clearSel();
+    var box=$("nf-info");box.style.borderLeftColor="";box.innerHTML="<h4>Toca un segmento</h4><p>Toca el glomérulo, el TCP, el asa, el TCD, el colector o el capilar (en el dibujo o en los botones) y verás qué hace, qué reabsorbe o secreta, qué hormona actúa y qué diurético lo bloquea. O elige una sustancia en «¿Qué le pasa a…?».</p>";
   });
   /* flujo animado */
   var FL={"d": "M110.0,150.0 L110.0,195.0 L110.5,196.2 L110.6,197.6 L110.5,199.2 L110.2,200.9 L109.7,202.6 L109.2,204.4 L108.9,206.1 L108.7,207.7 L108.9,209.1 L109.4,210.2 L110.5,211.1 L112.0,211.7 L114.1,212.0 L116.7,212.1 L119.7,211.8 L122.8,211.5 L125.9,211.2 L128.7,211.1 L131.3,211.1 L133.4,211.4 L135.1,211.9 L136.3,212.8 L136.9,213.9 L137.0,215.3 L136.6,217.0 L135.8,219.0 L134.5,221.2 L133.0,223.6 L131.2,226.1 L129.3,228.7 L127.5,231.2 L125.7,233.7 L124.1,236.1 L122.9,238.3 L122.0,240.3 L121.7,242.0 L121.8,243.5 L122.4,244.6 L123.6,245.4 L125.3,245.9 L127.4,246.2 L129.9,246.2 L132.8,246.1 L135.8,245.8 L139.0,245.5 L142.2,245.2 L145.2,244.9 L148.1,244.8 L150.6,244.8 L152.7,245.1 L154.4,245.6 L155.6,246.4 L156.2,247.5 L156.3,249.0 L156.0,250.7 L155.1,252.7 L153.9,254.9 L152.3,257.3 L150.5,259.8 L148.7,262.3 L146.8,264.9 L145.0,267.4 L143.5,269.8 L142.2,272.0 L141.4,274.0 L141.0,275.7 L141.1,277.1 L141.7,278.2 L142.9,279.1 L144.6,279.6 L146.7,279.9 L149.3,279.9 L152.1,279.8 L155.2,279.5 L158.3,279.2 L161.3,278.9 L163.9,279.0 L166.0,279.3 L167.5,279.9 L168.6,280.8 L169.1,281.9 L169.3,283.3 L169.1,284.9 L168.8,286.6 L168.3,288.4 L167.8,290.1 L167.5,291.8 L167.4,293.4 L167.5,294.8 L168.0,296.0 L168.0,296.0 L168.0,404.0 L168.0,545.0 L168.5,550.6 L169.9,555.9 L172.3,561.0 L175.5,565.6 L179.4,569.5 L184.0,572.7 L189.1,575.1 L194.4,576.5 L200.0,577.0 L205.6,576.5 L210.9,575.1 L216.0,572.7 L220.6,569.5 L224.5,565.6 L227.7,561.0 L230.1,555.9 L231.5,550.6 L232.0,545.0 L232.0,545.0 L232.0,452.0 L232.0,205.0 L231.1,191.7 L228.7,179.3 L224.7,167.8 L219.3,157.3 L212.6,147.8 L204.8,139.4 L195.9,132.0 L186.1,125.7 L175.5,120.5 L164.2,116.5 L152.3,113.6 L140.0,112.0 L142.0,99.0 L143.8,98.9 L145.7,99.0 L147.7,99.4 L149.6,99.9 L151.6,100.4 L153.5,100.7 L155.4,100.7 L157.2,100.3 L158.9,99.4 L160.6,98.0 L162.1,96.2 L163.6,93.9 L165.1,91.5 L166.6,89.0 L168.1,86.8 L169.7,85.6 L171.5,85.0 L173.4,85.2 L175.4,85.9 L177.5,87.3 L179.7,89.1 L181.9,91.2 L184.1,93.3 L186.3,95.4 L188.5,97.2 L190.6,98.6 L192.6,99.3 L194.5,99.5 L196.3,98.9 L197.9,97.7 L199.5,95.9 L201.0,93.6 L202.4,90.9 L203.9,88.2 L205.3,85.5 L206.7,83.0 L208.3,80.9 L209.9,79.4 L211.6,78.5 L213.4,78.3 L215.4,78.7 L217.4,79.8 L219.6,81.4 L221.8,83.4 L224.0,85.5 L226.2,87.6 L228.4,89.6 L230.6,91.2 L232.6,92.3 L234.6,92.7 L236.4,92.5 L238.1,91.6 L239.7,90.1 L241.3,88.0 L242.7,85.5 L244.1,82.8 L245.6,80.1 L247.0,77.4 L248.5,75.1 L250.1,73.3 L251.7,72.1 L253.5,71.5 L255.4,71.7 L257.4,72.4 L259.5,73.8 L261.7,75.6 L263.9,77.7 L266.1,79.8 L268.3,81.9 L270.5,83.7 L272.6,85.1 L274.6,85.8 L276.5,86.0 L278.3,85.4 L279.9,84.2 L281.4,82.0 L282.9,79.5 L284.4,77.1 L285.9,74.8 L287.4,73.0 L289.1,71.6 L290.8,70.7 L292.6,70.3 L294.5,70.3 L296.4,70.6 L298.4,71.1 L300.3,71.6 L302.3,72.0 L304.2,72.1 L306.0,72.0 L310.0,72.0 L310.0,596.0", "m": {"tcp": 0.1896, "desc": 0.3724, "tal": 0.5865, "tcd": 0.7114}};
   var dots=$("in-dots"),fp=document.createElementNS(NS,"path");
   fp.setAttribute("d",FL.d);fp.setAttribute("fill","none");fp.setAttribute("stroke","none");dots.appendChild(fp);
   var LEN=fp.getTotalLength(),N=60,rnd=seeded(7),deaths=[],m=FL.m;
+  /* donde empieza el colector (x = 310) */
+  var mCD=0.8,sc,pp;
+  for(sc=0;sc<=1000;sc++){pp=fp.getPointAtLength(sc/1000*LEN);if(pp.x>=309.5){mCD=sc/1000;break;}}
   function rr(a,b){return a+(b-a)*rnd();}
   for(i=0;i<39;i++)deaths.push(rr(0.03,m.tcp));
   for(i=0;i<9;i++)deaths.push(rr(m.tcp,m.desc));
   for(i=0;i<3;i++)deaths.push(rr(m.tal,m.tcd));
-  for(i=0;i<8;i++)deaths.push(rr(m.tcd,0.99));
+  for(i=0;i<8;i++)deaths.push(rr(m.tcd,0.93));
   deaths.push(2);
   for(i=deaths.length-1;i>0;i--){var j=Math.floor(rnd()*(i+1));var tmp=deaths[i];deaths[i]=deaths[j];deaths[j]=tmp;}
+  /* capilar peritubular: dos ramas (A: junto al TCD y colector; B: junto al TCP y asa) */
+  var CAPS=[$("in-capA"),$("in-capB")],CL=[CAPS[0].getTotalLength(),CAPS[1].getTotalLength()],CS=[[],[]];
+  (function(){var q,s,pt;for(q=0;q<2;q++){for(s=0;s<=CL[q];s+=4){pt=CAPS[q].getPointAtLength(s);CS[q].push({x:pt.x,y:pt.y,s:s});}}})();
+  function nearCap(x,y){
+    var best=1e9,r=null,q,a,dx,dy,dd;
+    for(q=0;q<2;q++){for(a=0;a<CS[q].length;a++){dx=CS[q][a].x-x;dy=CS[q][a].y-y;dd=dx*dx+dy*dy;if(dd<best){best=dd;r={q:q,s:CS[q][a].s,x:CS[q][a].x,y:CS[q][a].y};}}}
+    return r;
+  }
+  var tp=[],cp=[],q0;
+  for(i=0;i<N;i++){
+    if(deaths[i]>1){tp.push(null);cp.push(null);}
+    else{q0=fp.getPointAtLength(deaths[i]*LEN);tp.push(q0);cp.push(nearCap(q0.x,q0.y));}
+  }
   var cs=[];
   for(i=0;i<N;i++){var c=document.createElementNS(NS,"circle");c.setAttribute("r","4.3");c.setAttribute("stroke","#fff");c.setAttribute("stroke-width","0.8");c.style.pointerEvents="none";dots.appendChild(c);cs.push(c);}
+  var CX=0.05,RIDE=0.09;
+  /* sangre: glóbulos rojos y proteínas grandes (no pasan el filtro) */
+  var PRE="M14,58 C55,64 88,84 100,112 L108,130 L110,150 L116,132 L122,112 C140,92 150,70 150,38 C150,50 156,58 172,58 ";
+  var RD=[PRE+"L294,58 L294,566 Q287,578 280,566 L280,330",PRE+"Q178,58 178,66 L178,292 C178,300 186,304 186,312 L186,520 Q192,534 198,520 L198,290"];
+  function mkPath(d){var t=document.createElementNS(NS,"path");t.setAttribute("d",d);t.setAttribute("fill","none");t.setAttribute("stroke","none");dots.appendChild(t);return t;}
+  var RE=[mkPath(RD[0]),mkPath(RD[1])],RL=[RE[0].getTotalLength(),RE[1].getTotalLength()];
+  var tA=mkPath("M14,58 C55,64 88,84 100,112"),affLen=tA.getTotalLength();dots.removeChild(tA);
+  var tG=mkPath("M14,58 C55,64 88,84 100,112 L108,130 L110,150 L116,132 L122,112"),glomEnd=tG.getTotalLength();dots.removeChild(tG);
+  var NBC=14,bc=[];
+  for(i=0;i<NBC;i++){
+    var isR=(i%7)<4,g=document.createElementNS(NS,"path");
+    if(isR){g.setAttribute("d","M-4.8,0 C-4.8,-3.6 4.8,-3.6 4.8,0 C4.8,3.6 -4.8,3.6 -4.8,0 Z");g.setAttribute("fill","#c62828");}
+    else{g.setAttribute("d","M0,-5.2 L5.2,0 L0,5.2 L-5.2,0 Z");g.setAttribute("fill","#8e24aa");}
+    g.setAttribute("stroke","#fff");g.setAttribute("stroke-width","0.9");g.style.pointerEvents="none";dots.appendChild(g);
+    bc.push({el:g,r:i%2,ph:i/NBC});
+  }
+  /* secreción: del capilar al túbulo (TCP y colector) */
+  var NSC=12,sp=[],sq,st,sdot;
+  for(i=0;i<NSC;i++){
+    sq=(i<6)?rr(0.03,m.tcp):rr(mCD+0.02,0.9);
+    st=fp.getPointAtLength(sq*LEN);
+    sdot=document.createElementNS(NS,"circle");sdot.setAttribute("r","3");sdot.setAttribute("fill","#e65100");sdot.setAttribute("stroke","#fff");sdot.setAttribute("stroke-width","0.8");sdot.style.pointerEvents="none";dots.appendChild(sdot);
+    sp.push({el:sdot,q:sq,t:st,c:nearCap(st.x,st.y),ph:i/NSC});
+  }
   var tt=0,last=0,speed=1,running=!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   function draw(){
-    var alive=0;
-    for(var k=0;k<N;k++){
-      var u=(tt+k/N)%1;
-      if(u>=deaths[k]){cs[k].setAttribute("visibility","hidden");continue;}
-      alive++;
-      var p=fp.getPointAtLength(u*LEN);
-      cs[k].setAttribute("cx",p.x.toFixed(1));cs[k].setAttribute("cy",p.y.toFixed(1));
-      cs[k].setAttribute("fill",u<m.tcp?"#1e88e5":(u<m.tcd?"#3949ab":"#f9a825"));
-      cs[k].setAttribute("visibility","visible");
+    var alive=0,k,u,dk,c2,p,s,f,T,C,r,cp2,x,y;
+    for(k=0;k<N;k++){
+      c2=cs[k];u=(tt+k/N)%1;dk=deaths[k];
+      if(u<dk){
+        alive++;
+        p=fp.getPointAtLength(u*LEN);
+        c2.setAttribute("cx",p.x.toFixed(1));c2.setAttribute("cy",p.y.toFixed(1));
+        c2.setAttribute("fill",u<mCD?"#1e88e5":"#f9a825");c2.setAttribute("r","4.3");c2.setAttribute("opacity","1");
+        c2.setAttribute("visibility","visible");continue;
+      }
+      s=u-dk;T=tp[k];C=cp[k];
+      if(!T||!C||s>CX+RIDE){c2.setAttribute("visibility","hidden");continue;}
+      c2.setAttribute("fill","#43a047");
+      if(s<CX){
+        f=s/CX;f=f*f*(3-2*f);
+        x=T.x+(C.x-T.x)*f;y=T.y+(C.y-T.y)*f;c2.setAttribute("opacity","1");c2.setAttribute("r","4.3");
+      }else{
+        r=(s-CX)/RIDE;
+        cp2=CAPS[C.q].getPointAtLength(Math.min(CL[C.q],C.s+r*70));
+        x=cp2.x;y=cp2.y;c2.setAttribute("opacity",(1-r*r).toFixed(2));c2.setAttribute("r","3.6");
+      }
+      c2.setAttribute("cx",x.toFixed(1));c2.setAttribute("cy",y.toFixed(1));c2.setAttribute("visibility","visible");
     }
     $("nf-alive").textContent=alive;
+    /* glóbulos rojos y proteínas: rebotan en el filtro y siguen por la sangre */
+    var b,w,dist,jx,jy;
+    for(k=0;k<NBC;k++){
+      b=bc[k];w=(2*tt+b.ph)%1;dist=w*RL[b.r];
+      p=RE[b.r].getPointAtLength(dist);x=p.x;y=p.y;
+      if(dist>affLen&&dist<glomEnd){jx=Math.sin(tt*1500+k*2.1)*3;jy=Math.cos(tt*1300+k*1.7)*3;x+=jx;y+=jy;}
+      b.el.setAttribute("transform","translate("+x.toFixed(1)+","+y.toFixed(1)+")");
+    }
+    /* secreción */
+    var v,o,sd;
+    for(k=0;k<NSC;k++){
+      sd=sp[k];v=(3*tt+sd.ph)%1;o=1;
+      if(!sd.c){sd.el.setAttribute("visibility","hidden");continue;}
+      if(v<0.4){
+        p=CAPS[sd.c.q].getPointAtLength(Math.max(0,sd.c.s-40*(1-v/0.4)));x=p.x;y=p.y;if(v<0.1)o=v/0.1;
+      }else if(v<0.6){
+        f=(v-0.4)/0.2;f=f*f*(3-2*f);x=sd.c.x+(sd.t.x-sd.c.x)*f;y=sd.c.y+(sd.t.y-sd.c.y)*f;
+      }else{
+        p=fp.getPointAtLength(Math.min(0.99,sd.q+(v-0.6)/0.4*0.1)*LEN);x=p.x;y=p.y;if(v>0.88)o=(1-v)/0.12;
+      }
+      sd.el.setAttribute("cx",x.toFixed(1));sd.el.setAttribute("cy",y.toFixed(1));sd.el.setAttribute("opacity",o.toFixed(2));sd.el.setAttribute("visibility","visible");
+    }
   }
   function frame(ts){if(!last)last=ts;var dt=Math.min(0.1,(ts-last)/1000);last=ts;if(running)tt=(tt+dt*0.055*speed)%1;draw();requestAnimationFrame(frame);}
   requestAnimationFrame(frame);
